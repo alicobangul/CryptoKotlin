@@ -61,10 +61,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         AlertDialog.Builder(this).apply {
-            setMessage("Kullanmak istediğiniz kütüphaneyi seçiniz")
-                .setNegativeButton("RXJAVA") { _, _ -> isRxJava = true }
-                .setPositiveButton("COROUTINES") { _, _ -> isRxJava = false }
-                .setCancelable(false)
+            setMessage("Kullanmak istediğiniz kütüphaneyi seçiniz") // AlertDialog mesajı verildi
+                .setNegativeButton("RXJAVA") { _, _ -> isRxJava = true } // Buton text ve click aksiyonu eklendi
+                .setPositiveButton("COROUTINES") { _, _ -> isRxJava = false } // Buton text ve click aksiyonu eklendi
+                .setCancelable(false) // AlertDialog kapatılamaz
                 .setOnDismissListener {
 
                     initialize() // Değişkenler başlatılıyor
@@ -81,8 +81,8 @@ class MainActivity : AppCompatActivity() {
 
         // Database tanımlandı
         val cryptoDatabase = Room
-            .databaseBuilder(applicationContext, CryptoDatabase::class.java, "Crypto")
-            .allowMainThreadQueries()
+            .databaseBuilder(applicationContext, CryptoDatabase::class.java, "Crypto") // Room builder
+            .allowMainThreadQueries() // Main Thread sorgusu devre dışı bırakıldı
             .build()
 
         cryptoDao = cryptoDatabase.cryptoDao() // Dao tanımlandı
