@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CryptoKotlin</string>
+    <string name="online">ONLINE (API DATA)</string>
+    <string name="offline">OFFLINE (DB DATA)</string>
+</resources>
